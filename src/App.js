@@ -1,12 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FormComponent, TodoList } from './components'
 import './index.scss'
 
+
 export const App = () => {
+  const [ todos, setTodos ] = useState([])
+  let [ id, incrementId ] = useState(0)
+
+  const addTodo = title => {
+    setTodos([
+      ...todos,
+      {
+        id,
+        date: new Date(),
+        title
+      }
+    ])
+
+    incrementId(++id)
+  }
+
+  const removeTodo = id => {
+    setTodos(todos.filter(item => item.id !== id))
+  }
+
   return (
     <div className="wrapper">
-      <FormComponent />
-      <TodoList />
+      <FormComponent addTodo={addTodo} />
+      <TodoList todos={todos} onRemoveTodo={removeTodo} />
     </div>
   )
 }

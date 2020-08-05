@@ -7,10 +7,18 @@ const styles = {
   }
 }
 
-export const TodoList = () => {
+export const TodoList = ({ todos, onRemoveTodo }) => {
+  const remove = data => {
+    onRemoveTodo(data)
+  }
+
   return (
     <div className="todo-list" style={styles.list}>
-      <Todo />
+      {
+        todos.length
+        ? todos.map((todo, index) => <Todo key={index} data={todo} onRemove={remove} />)
+        : <h1>Нет данных</h1>
+      }
     </div>
   )
 }

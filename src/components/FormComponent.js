@@ -24,11 +24,11 @@ const styles = {
   }
 }
 
-export const FormComponent = () => {
+export const FormComponent = ({ addTodo }) => {
   const [ todoValue, setTodoValue ] = useState('')
 
-  const addTodo = () => {
-    console.log(`Note: ${todoValue}`)
+  const addTodoInComponent = () => {
+    addTodo(todoValue)
     setTodoValue('')
   }
 
@@ -43,7 +43,7 @@ export const FormComponent = () => {
       />
       <button
         style={styles.form.button}
-        onClick={addTodo}
+        onClick={addTodoInComponent}
       >
         &#10148;
       </button>
