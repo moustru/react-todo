@@ -1,5 +1,18 @@
 import React from 'react'
 
+export const Todo = ({ data, onRemove }) => {
+  const remove = () => {
+    onRemove(data.id)
+  }
+
+  return (
+    <div className="todo" style={styles.todo}>
+      <span>{data.title}</span>
+      <button style={styles.todo.button} onClick={remove}>X</button> 
+    </div>
+  )
+}
+
 const styles = {
   todo: {
     display: 'flex',
@@ -16,17 +29,4 @@ const styles = {
       cursor: 'pointer'
     }
   }
-}
-
-export const Todo = ({ data, onRemove }) => {
-  const remove = () => {
-    onRemove(data.id)
-  }
-
-  return (
-    <div className="todo" style={styles.todo}>
-      <span>{data.title}</span>
-      <button style={styles.todo.button} onClick={remove}>X</button> 
-    </div>
-  )
 }

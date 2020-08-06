@@ -1,12 +1,6 @@
 import React from 'react'
 import { Todo } from './Todo'
 
-const styles = {
-  list: {
-    width: '30%'
-  }
-}
-
 export const TodoList = ({ todos, onRemoveTodo }) => {
   const remove = data => {
     onRemoveTodo(data)
@@ -21,4 +15,10 @@ export const TodoList = ({ todos, onRemoveTodo }) => {
       }
     </div>
   )
+}
+
+const styles = {
+  list: {
+    width: '30%'
+  }
 }

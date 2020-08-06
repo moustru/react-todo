@@ -1,29 +1,5 @@
 import React, { useState } from 'react'
 
-const styles = {
-  form: {
-    width: '30%',
-    marginBottom: '30px',
-
-    input: {
-      width: '80%',
-      marginRight: '20px',
-      padding: '10px 0',
-      border: 'none',
-      borderBottom: '2px solid'
-    },
-
-    button: {
-      width: 'calc(20% - 20px)',
-      padding: '10px',
-      fontSize: '20px',
-      border: 'none',
-      cursor: 'pointer',
-      transition: 'all .2s ease'
-    }
-  }
-}
-
 export const FormComponent = ({ addTodo }) => {
   const [ todoValue, setTodoValue ] = useState('')
 
@@ -49,4 +25,28 @@ export const FormComponent = ({ addTodo }) => {
       </button>
     </div>
   )
+}
+
+const styles = {
+  form: {
+    width: '30%',
+    marginBottom: '30px',
+
+    input: {
+      width: '80%',
+      marginRight: '20px',
+      padding: '10px 0',
+      border: 'none',
+      borderBottom: '2px solid'
+    },
+
+    button: {
+      width: 'calc(20% - 20px)',
+      padding: '10px',
+      fontSize: '20px',
+      border: 'none',
+      cursor: 'pointer',
+      transition: 'all .2s ease'
+    }
+  }
 }
