@@ -1,4 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '@/context/TodoContext'
+
+export const Todo = ({ data }) => {
+  const todoContext = useContext(TodoContext)
+
+  return (
+    <div className="todo" style={styles.todo}>
+      <span>{data.title}</span>
+      <button style={styles.todo.button} onClick={() => todoContext.removeNote(data.id)}>X</button> 
+    </div>
+  )
+}
 
 const styles = {
   todo: {
@@ -16,17 +28,4 @@ const styles = {
       cursor: 'pointer'
     }
   }
-}
-
-export const Todo = ({ data, onRemove }) => {
-  const remove = () => {
-    onRemove(data.id)
-  }
-
-  return (
-    <div className="todo" style={styles.todo}>
-      <span>{data.title}</span>
-      <button style={styles.todo.button} onClick={remove}>X</button> 
-    </div>
-  )
 }

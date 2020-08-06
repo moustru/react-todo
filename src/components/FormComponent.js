@@ -1,4 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { TodoContext } from '@/context/TodoContext'
+
+export const FormComponent = () => {
+  const [ todoValue, setTodoValue ] = useState('')
+  const todoContext = useContext(TodoContext)
+
+  const addTodoInComponent = () => {
+    todoContext.addNote(todoValue)
+    setTodoValue('')
+  }
+
+  return (
+    <div style={styles.form}>
+      <input
+        type="text"
+        placeholder="Введите заметку"
+        style={styles.form.input}
+        value={todoValue}
+        onChange={e => setTodoValue(e.target.value)}
+      />
+      <button
+        style={styles.form.button}
+        onClick={addTodoInComponent}
+      >
+        &#10148;
+      </button>
+    </div>
+  )
+}
 
 const styles = {
   form: {
@@ -22,31 +51,4 @@ const styles = {
       transition: 'all .2s ease'
     }
   }
-}
-
-export const FormComponent = ({ addTodo }) => {
-  const [ todoValue, setTodoValue ] = useState('')
-
-  const addTodoInComponent = () => {
-    addTodo(todoValue)
-    setTodoValue('')
-  }
-
-  return (
-    <div style={styles.form}>
-      <input
-        type="text"
-        placeholder="Введите заметку"
-        style={styles.form.input}
-        value={todoValue}
-        onChange={e => setTodoValue(e.target.value)}
-      />
-      <button
-        style={styles.form.button}
-        onClick={addTodoInComponent}
-      >
-        &#10148;
-      </button>
-    </div>
-  )
 }
