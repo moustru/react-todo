@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export const FormComponent = ({ addTodo }) => {
-  const [ todoValue, setTodoValue ] = useState('')
+  const [ todoValue, setTodoValue ] = useState('');
 
   const addTodoInComponent = () => {
-    addTodo(todoValue)
-    setTodoValue('')
-  }
+    addTodo(todoValue);
+    setTodoValue('');
+  };
 
   return (
     <div style={styles.form}>
@@ -18,14 +18,15 @@ export const FormComponent = ({ addTodo }) => {
         onChange={e => setTodoValue(e.target.value)}
       />
       <button
+        type="submit"
         style={styles.form.button}
         onClick={addTodoInComponent}
       >
         &#10148;
       </button>
     </div>
-  )
-}
+  );
+};
 
 const styles = {
   form: {
@@ -49,4 +50,4 @@ const styles = {
       transition: 'all .2s ease'
     }
   }
-}
+};

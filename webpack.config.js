@@ -1,13 +1,14 @@
-const path = require('path')
-const { cssLoaders, jsLoaders } = require('./webpack/loaders')
-const optimization = require('./webpack/optimization')
-const plugins = require('./webpack/plugins')
-const { filename } = require('./webpack/utils')
-const isDev = process.env.NODE_ENV === 'development'
+const path = require('path');
+const { cssLoaders, jsLoaders } = require('./webpack/loaders');
+const optimization = require('./webpack/optimization');
+const plugins = require('./webpack/plugins');
+const { filename } = require('./webpack/utils');
+
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: [ '@babel/polyfill', './src/index.js' ],
-  
+
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist')
@@ -54,4 +55,4 @@ module.exports = {
     port: 9000,
     hot: isDev
   }
-}
+};
