@@ -1,6 +1,6 @@
-import { FormComponent } from './FormComponent';
-import { TodoList } from './TodoList';
-import { Todo } from './Todo';
+import FormComponent from './FormComponent/FormComponent';
+import TodoList from './TodoList/TodoList';
+import Todo from './Todo/Todo';
 
 export {
   FormComponent,
