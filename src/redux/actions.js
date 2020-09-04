@@ -1,9 +1,16 @@
-import { ADD_TODO, REMOVE_TODO } from './types';
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from './types';
 
 export const addTodo = title => (
   {
     type: ADD_TODO,
     title
+  }
+);
+
+export const toggleTodo = id => (
+  {
+    type: TOGGLE_TODO,
+    id
   }
 );
 

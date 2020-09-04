@@ -16,7 +16,8 @@
     "prefer-const": "off",
     "no-undef": "off",
     "import/no-unresolved": "off",
-    "import/order": "off"
+    "import/order": "off",
+    "no-param-reassign": "off"
   },
   "plugins": ["react"],
   "parserOptions": {
